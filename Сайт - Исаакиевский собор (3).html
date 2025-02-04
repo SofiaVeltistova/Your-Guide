@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">	</script>
+  	<title>Ваш путеводитель</title>
+  	<link rel="stylesheet" type="text/css" href="sim-slider-styles.css">
+  	<style>
+    	.GFG {
+      		background-color: green;
+      		border: 2px solid black;
+      		color: white;
+      		padding: 15px 15px;
+      		cursor: pointer;
+    	}
+	</style>
+    <style>
+      * {box-sizing: border-box}
+      body {
+      font-family: Verdana, sans-serif;
+      margin:0}
+      .mySlides {display: none}
+      img {vertical-align: middle;}
+      .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+      }
+      /* Кнопки next & previous*/
+      .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      }
+      /* Измените положение "next button" */
+      .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+      }
+      /* Добавьте черный фоновый цвет с небольшой прозрачностью*/
+      .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+      }
+      /* Подпись под изображением */
+      .text {
+      color: #ffffff;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+      }
+      /* Number text (1/3 etc) */
+      .numbertext {
+      color: #ffffff;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+      }
+      /* Точки/маркеры/указатели */
+      .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #999999;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      }
+      .active, .dot:hover {
+      background-color: #111111;
+      }
+      /* Выцветание анимации */
+      .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+      }
+      @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+      }
+      @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+      }
+      /* Для маленьких экранов увеличьте размер текста */
+      @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+      }
+    </style>
+    <style>
+	button {
+    		display: flex;
+    		margin: 0 auto;
+	}    
+    </style>
+</head>
+
+<body>
+  	<h1>Исаакиевский собор</h1>
+
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 9</div>
+        <img src="https://sun1-15.userapi.com/impg/5yKi-Ol24xJIoEcqvaHNzx9wwqldBUvcHVhmgQ/pYF2huunBoE.jpg?size=870x489&quality=95&sign=b7264867f101df4116d19357c366466f&c_uniq_tag=ppMwnXXQ8RCDQ4wyRw2rgYhY_lpTnZr8lFhI2eRGE3c&type=album" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 9</div>
+        <img src="https://avatars.mds.yandex.net/i?id=8f70160049c0bcc65f20ee5807a77f21_l-5086925-images-thumbs&n=13" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 9</div>
+        <img src="https://avatars.mds.yandex.net/i?id=c301c9d86dc31c31d5dc52ad41f37329_l-5163590-images-thumbs&n=13" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 9</div>
+        <img src="https://static.spbdnevnik.ru/uploads/block/image/446493/__medium___medium_5.png.jpg.jpg" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 9</div>
+        <img src="https://blog.ostrovok.ru/wp-content/uploads/2023/12/6копия-19.jpg" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 9</div>
+        <img src="https://www.spbmuzei.ru/wp-content/uploads/2020/08/kolonadaissak-e1596990045166.jpg" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 9</div>
+        <img src="https://balthazar.club/o/uploads/posts/2023-09/1695356679_balthazar-club-p-isaakievskii-sobor-vnutrennyaya-skulptura-28.jpg" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">8 / 9</div>
+        <img src="https://img.tsargrad.tv/cache/b/6/19_11_4.jpg/w1056h594fill.jpg" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">9 / 9</div>
+        <img src="https://keeptrip.ru/images/ru/spb/2015-spb-02.jpg" style="width:100%">
+        <div class="text"> </div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span> 
+      <span class="dot" onclick="currentSlide(5)"></span> 
+      <span class="dot" onclick="currentSlide(6)"></span> 
+      <span class="dot" onclick="currentSlide(7)"></span> 
+      <span class="dot" onclick="currentSlide(8)"></span> 
+      <span class="dot" onclick="currentSlide(9)"></span> 
+    </div>
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+    </script>
+
+
+  	<br>
+  	<br>
+  	<h2>
+	<a href="https://yandex.ru/maps/?rtext=~59.933907,30.306189" target="_blank" class="uk-button uk-button-primary">
+      		<div class="center-container">
+			<button class="GFG" style="font-weight:bold">
+        			Проложить маршрут в Яндекс.Картах
+      			</button>
+		</div>
+    	</a>
+  	</h2>
+  	<p>Исаакиевский собор — крупнейший православный храм в Санкт-Петербурге, относится к основным достопримечательностям города, имеет статус памятника федерального значения.</p>
+	<p>Собор освящен во имя святого преподобного Исаакия Далматского, в день поминовения которого родился основатель города царь Петр I. Существующий ныне собор является четвертым храмом, построенным в Петербурге в ознаменование дня рождения Петра I.</p>
+
+	<p>Первая Исаакиевская церковь была освящена в 1707 году. Она имела временный характер и помещалась в перестроенном деревянном «чертежном амбаре», напротив Адмиралтейства. Церковь отличалась простотой архитектурных форм и скромностью отделки, характерными для первых зданий петровской эпохи. В этом храме 12 февраля 1712 года венчались Петр I и Екатерина Алексеевна.</p>
+
+	<p>6 августа 1717 года Пётр I заложил первый камень новой Исаакиевской церкви, уже каменной. Ее возводили в течение 10 лет по проекту Г. И. Маттарнови. В строительстве участвовали несколько ведущих архитекторов первой четверти XVIII века: Н. Гербель, Г. Киавери, М. Земцов. Удлиненное каменное здание с колокольней, увенчанной шпилем и украшенной курантами, напоминало по облику построенный примерно в то же время архитектором Д. Трезини Петропавловский собор. Церковь стояла на неукрепленном речном берегу, приблизительно там, где сейчас находится памятник Петру I (Медный всадник). Из-за осадок грунта в ее стенах и сводах появились трещины, и в 1763 году здание было разобрано.</p>
+
+	<p>Екатерина II чтила память императора Петра I и посчитала своим долгом отстроить Исаакиевский собор заново. Работы начались в 1768 году по проекту А. Ринальди. Церковь была задумана как изящное строение в стиле барокко с пятью главами и трехъярусной колокольней. Строительство продолжалось 34 года. Достраивал храм в царствование Павла I архитектор В. Бренна, вынужденный по приказу императора упростить и исказить замысел Ринальди.</p>
+
+	<p>Непропорциональное и приземистое сооружение не соответствовало парадному облику центра столицы. В 1809 и 1813 годах были объявлены конкурсы проектов перестройки третьей Исаакиевской церкви, непременным условием которых было желание Александра I сохранить большую часть ринальдиевской церкви. В конкурсах участвовали известные зодчие Дж. Кваренги, А. Воронихин, Ч. Камерон и многие другие, но Высочайшее одобрение получил проект молодого французского архитектора Огюста Монферрана.</p>
+
+	<p>Исаакиевский собор строился сорок лет с 1818 по 1858 годы. Строительство курировал император Николай I, председателем комиссии построения был Карл Опперман. Возведение Исаакиевского собора стало важным этапом в истории русской строительной практики как по грандиозности размаха, так и по сложности инженерных задач. Одной из таких задач было устройство фундамента – сплошной каменной кладки высотой 7,5 м, скрепленной металлическими связями и заложенной на 24 000 свай.</p>
+
+	<p>Не менее сложной оказалась установка на портиках 48 гранитных колонн.</p>
+
+	<p>Способ ручной выломки гранитных монолитов изобрел выходец из Вологодской губернии каменотес и подрядчик Самсон Суханов. Гранитные монолиты вырубали в карьере Пютерлакса, близ Выборга. В Петербург их доставляли на баржах при помощи первых в России буксирных судов. Для установки колонн возвели строительные леса со сложной системой блоков и 16 поворотными кабестанами. Оригинальная система устройства лесов давала возможность 128 рабочим поднимать и устанавливать колонну высотой 17 м и весом 114 т за 40–45 минут. Первая из 48 колонн портиков была установлена 20 марта 1828 года, за ее подъемом наблюдали император Николай I с семьей и многочисленные иностранные гости. Это впечатляющее зрелище привлекало русских и заграничных ученых, не говоря уже о жителях Петербурга. О подъеме колонн говорилось и писалось как о крупнейшем достижении строительной техники.</p>
+
+	<p>В отличие от сложившейся строительной практики, колонны четырех портиков поставили до возведения стен храма. Стены строили из кирпича, скрепленного известковым раствором и коваными железными связями. Одновременно с кирпичной кладкой выполнялась мраморная облицовка.</p>
+
+	<p>Блестяще была решена задача сооружения купола диаметром 25,8 м. Купол собран из металлических конструкций и покрыт снаружи золочеными медными листами. В истории строительства это один из первых случаев применения металлических конструкций для перекрытия здания огромной площади.</p>
+
+	<p>На строительстве собора широко применялись различные технические новшества. Например, для перевозки мрамора между Невой и строительной площадкой в 1837 году была сооружена железная дорога – первый рельсовый путь в истории Петербурга.</p>
+  	<h2>Часы работы</h2>
+  	<h3>Музей-памятник «Исаакиевский собор»</h3>
+  	<p>С 10:00 до 18:00 - (кассы с 10:00 до 17:30)</p>
+
+  	<p>Выходной день – среда</p>
+
+  	<h4>Вечерние программы музея с 01 мая по 30 сентября:</h4>
+  	<p>
+    		с 18:00 до 21:30 без экскурсионного обслуживания,
+    		<br>
+    		киоск по продаже полиграфической и сувенирной продукции с 18:00 до21:30, <br>
+    		работа касс и впуск посетителей с 18:00 до 21:00.
+  	</p>
+
+  	<p>Выходной день среда.</p>
+
+  	<h3>Колоннада Исаакиевского собора
+    	<br>
+    	(высота 43 метра, подъем и спуск пешком)
+  	</h3>
+  	<p>С 10:00 до 18:00.
+   	<br>(с 01 мая по 30 сентября – без выходных; с 01 октября по 30 апреля выходной день – третья среда месяца)
+  	</p>
+  	<h4>Вечерняя колоннада - с 01 мая по 30 сентября:</h4>
+  	<p>с 18:00 до 21:30,<br>
+    	работа касс и впуск посетителей с 18:00 до 21:00.</p>
+  	<p>Без выходных.</p>
+  	<h2>Цены на билеты</h2>
+  	<p>можете посмотреть <a href="https://cathedral.ru/ru/visitors/prices">здесь</a>.</p>
+  	<p>Посетите <a href="https://cathedral.ru/ru">Официальный сайт Исаакиевского собора</a> для получения дополнительной информации.</p>
+
+</body>
+
+
+</html>
